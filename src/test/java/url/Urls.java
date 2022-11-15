@@ -8,4 +8,11 @@ public interface Urls {
 
     String  HOVERS_SLUG = "/hovers";
     String DYNAMIC_CONTROL_SLUG = "/dynamic_controls";
+
+    String JS_ALERTS_SLUG ="/javascript_alerts";
+
+    String FLOATING_MENUS_SLUG = "/floating_menu";
+
+    String LOGIN_FORM_SLUG = "/login";
+
 }
