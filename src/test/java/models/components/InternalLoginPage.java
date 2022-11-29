@@ -1,6 +1,6 @@
 package models.components;
 
-public class InternalLoginPage {
+public class InternalLoginPage extends LoginPage{
     @Override
     public String username(){
         return "InternalLoginPage | username";

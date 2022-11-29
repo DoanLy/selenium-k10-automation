@@ -1,12 +1,13 @@
 package tests;
 
 import driver.DriverFactory;
-import models.pages.LoginPageMode02;
+import models.components.LoginFormComponent;
+import models.pages.HerokuLoginPage;
 import models.pages.LoginPageMode03;
 import org.openqa.selenium.WebDriver;
 import url.Urls;
 
-public class LoginMode03Test implements Urls {
+public class PageFooterTest implements Urls {
 
     public static void main(String[] args) {
 
@@ -14,12 +15,13 @@ public class LoginMode03Test implements Urls {
 
         try{
             //Navigate to the  ...
-            driver.get(BASE_URL.concat(LOGIN_FORM_SLUG));
+            driver.get(HEROKU_BASE_URL.concat(LOGIN_FORM_SLUG));
 
             //input login
-            LoginPageMode03 loginPage  = new LoginPageMode03(driver);
-            loginPage.inputUsername("Ly").inputPassword("12345678").clickOnBtn();
-
+            HerokuLoginPage loginPage = new HerokuLoginPage(driver);
+     //       System.out.println(loginPage.footerComp().getLinkText());
+            LoginFormComponent loginFormComp = (LoginFormComponent) loginPage.loginFormComp();
+            loginFormComp.usernameElem().sendKeys("teo");
             //Debug
             Thread.sleep(2000);
         }

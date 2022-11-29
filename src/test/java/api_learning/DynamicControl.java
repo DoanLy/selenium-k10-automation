@@ -16,7 +16,7 @@ public class DynamicControl {
     public static void main(String[] args) {
         WebDriver  driver = DriverFactory.getChromeDriver();
         try{
-driver.get(Urls.BASE_URL.concat(Urls.DYNAMIC_CONTROL_SLUG));
+driver.get(Urls.HEROKU_BASE_URL.concat(Urls.DYNAMIC_CONTROL_SLUG));
 
 By checkboxFormSel = By.id("checkbox-example");
 By inputFormSel = By.cssSelector("#input-example");

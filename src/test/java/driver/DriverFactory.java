@@ -10,12 +10,12 @@ import java.time.Duration;
 public class DriverFactory {
     public static WebDriver getChromeDriver() {
         String currentProjectLocation = System.getProperty("user.dir");
-        String chromeDriverLocation = "";
+        String chromeDriverLocation;
 
         if (OS.isFamilyMac()) {
             chromeDriverLocation = "/src/test/resources/drivers/chromedriver";
         } else if (OS.isFamilyWindows()) {
-            currentProjectLocation = "\\src\\test\\resources\\drivers\\chromedriver.exe";
+            chromeDriverLocation = "\\src\\test\\resources\\drivers\\chromedriver.exe";
         } else {
             throw new RuntimeException("[ERR] Coudn't detect the OS");
         }
@@ -26,7 +26,7 @@ public class DriverFactory {
         chromeOptions.addArguments("--incognito");
 
         WebDriver driver = new ChromeDriver(chromeOptions);
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15L));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5L));
         return driver;
 
     }

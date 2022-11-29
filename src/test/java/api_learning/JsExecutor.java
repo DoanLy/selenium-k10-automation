@@ -2,7 +2,7 @@ package api_learning;
 
 import driver.DriverFactory;
 import org.openqa.selenium.*;
-import sun.awt.windows.ThemeReader;
+//import sun.awt.windows.ThemeReader;
 import url.Urls;
 
 public class JsExecutor implements Urls {

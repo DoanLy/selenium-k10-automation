@@ -13,10 +13,10 @@ public class DropDown {
         WebDriver driver = DriverFactory.getChromeDriver();
         try {
             //Navigate to the dropdown page
-                driver.get(Urls.BASE_URL.concat(Urls.DROPDOWN_SLUG));
+                driver.get(Urls.HEROKU_BASE_URL.concat(Urls.DROPDOWN_SLUG));
             //Locate the select tag
             WebElement dropdownElem = driver.findElement(By.cssSelector("#dropdown"));
-            SelectEx select = (SelectEx) new Select(dropdownElem);
+            SelectEx select = new SelectEx((WebDriver) dropdownElem);
             //Select by visible text
             select.selectOption01();
             Thread.sleep(1000);
@@ -34,6 +34,6 @@ public class DropDown {
         }catch (Exception e){
             e.printStackTrace();
         }
-
+driver.quit();
     }
 }
