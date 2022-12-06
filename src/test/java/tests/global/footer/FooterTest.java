@@ -5,51 +5,39 @@ import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import test_flows.global.footer.FooterTestFlow;
+import tests.BaseTest;
 import url.Urls;
 
-public class FooterTest {
+public class FooterTest extends BaseTest {
     @Test
-    public void testHomePageFooter(){
-        WebDriver driver = DriverFactory.getChromeDriver();
-        try{
+    public void testHomePageFooter() {
+
+        driver.get(Urls.BASE_URL);
+        FooterTestFlow footerTestFlow = new FooterTestFlow(driver);
+        footerTestFlow.verifyFooterComponent();
+
+    }
+
+    @Test
+    public void testCategoryPageFooter() {
             driver.get(Urls.BASE_URL);
+            Assert.fail("Demo taking screenshot!");
             FooterTestFlow footerTestFlow = new FooterTestFlow(driver);
             footerTestFlow.verifyFooterComponent();
-
-        }catch (Exception e){
-            e.printStackTrace();
-        }finally {
-            driver.quit();
-        }
     }
 
 //    @Test
-//    public void testCategoryPageFooter(){
+//    public void testLoginPageFooter() {
 //        WebDriver driver = DriverFactory.getChromeDriver();
-//        try{
+//        try {
 //            driver.get(Urls.BASE_URL);
 //            FooterTestFlow footerTestFlow = new FooterTestFlow(driver);
 //            footerTestFlow.verifyFooterComponent();
 //
-//        }catch (Exception e){
+//        } catch (Exception e) {
 //            e.printStackTrace();
-//        }finally {
+//        } finally {
 //            driver.quit();
 //        }
-//
-//    }
-//@Test
-//    public void testLoginPageFooter(){
-//        WebDriver driver = DriverFactory.getChromeDriver();
-//        try{
-//            driver.get(Urls.BASE_URL);
-//            FooterTestFlow footerTestFlow = new FooterTestFlow(driver);
-//            footerTestFlow.verifyFooterComponent();
-//
-//        }catch (Exception e){
-//            e.printStackTrace();
-//        }finally {
-//            driver.quit();
-//        }
- //   }
+  //  }
 }
